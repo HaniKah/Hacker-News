@@ -1,0 +1,9 @@
+.info {
+  color: grey;
+  display: flex;
+  gap: 1em;
+}
+a {
+  text-decoration: none;
+  color: black;
+}

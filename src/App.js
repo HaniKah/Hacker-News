@@ -61,7 +61,7 @@ function App() {
           </>
         ))}
       </ol>
-
+      {/* Pagination Component from MaterialUI */}
       <Pagination
         boundaryCount={1}
         siblingCount={3}

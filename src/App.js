@@ -15,7 +15,7 @@ function App() {
   }, []);
 
   const handlePageChange = (e, p) => {
-    console.log("clicked on page " + e, p);
+    //console.log("clicked on page " + e, p);
     setPage(p);
     fetchData(searchTerm, p);
   };
@@ -34,11 +34,11 @@ function App() {
 
     if (searchT) {
       url = url + searchT;
-      console.log("inside fetch if(searchT) " + url);
+      //console.log("inside fetch if(searchT) " + url);
     }
     if (page) {
       url = url + "&page=" + page;
-      console.log("inside fetch if(page) " + url);
+      //console.log("inside fetch if(page) " + url);
     } else {
       setPage(1);
     }

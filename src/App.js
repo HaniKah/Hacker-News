@@ -73,27 +73,25 @@ function App() {
         <CircularProgress size={200} color="secondary" />
       </Box>
       <div style={{ display: spinner ? "none" : "block" }}>
-        {posts.length > 1 ? (
-          <>
-            <ol>
-              {posts?.map((post) => (
-                <>
-                  <Row post={post}></Row>
-                </>
-              ))}
-            </ol>
-            {/* Pagination Component from MaterialUI */}
-            <Pagination
-              boundaryCount={1}
-              siblingCount={3}
-              count={100}
-              page={page}
-              onChange={handlePageChange}
-            />
-          </>
-        ) : (
-          <h1>You are doing some crazy stuff. There is nothing to show</h1>
-        )}
+        <ol>
+          {posts ? (
+            posts.map((post) => (
+              <>
+                <Row post={post}></Row>
+              </>
+            ))
+          ) : (
+            <h1>You are doing some crazy stuff. There is nothing to show</h1>
+          )}
+        </ol>
+        {/* Pagination Component from MaterialUI */}
+        <Pagination
+          boundaryCount={1}
+          siblingCount={3}
+          count={100}
+          page={page}
+          onChange={handlePageChange}
+        />
       </div>
       <Footer />
     </div>

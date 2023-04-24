@@ -4,7 +4,11 @@ export default function Footer() {
   return (
     <>
       <div className="Footer">
-        <img className="imageFooter" src="https://news.ycombinator.com/s.gif" />
+        <img
+          alt=""
+          className="imageFooter"
+          src="https://news.ycombinator.com/s.gif"
+        />
         <div className="footerContent">
           <div className="application">
             <a href="https://www.ycombinator.com/apply/">

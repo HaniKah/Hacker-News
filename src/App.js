@@ -36,21 +36,24 @@ function App() {
   const fetchData = async (searchT, page) => {
     setSpinner(true);
     let url = "http://hn.algolia.com/api/v1/search?query=";
+    try {
+      if (searchT) {
+        url = url + searchT;
+        //console.log("inside fetch if(searchT) " + url);
+      }
+      if (page) {
+        url = url + "&page=" + (page - 1);
+        //console.log("inside fetch if(page) " + url);
+      } else {
+        setPage(1);
+      }
 
-    if (searchT) {
-      url = url + searchT;
-      //console.log("inside fetch if(searchT) " + url);
+      const postsResponse = await fetch(url);
+      const postsData = await postsResponse.json();
+      setPosts(postsData.hits);
+    } catch (error) {
+      console.error(error);
     }
-    if (page) {
-      url = url + "&page=" + (page - 1);
-      //console.log("inside fetch if(page) " + url);
-    } else {
-      setPage(1);
-    }
-
-    const postsResponse = await fetch(url);
-    const postsData = await postsResponse.json();
-    setPosts(postsData.hits);
 
     setTimeout(() => {
       setSpinner(false);

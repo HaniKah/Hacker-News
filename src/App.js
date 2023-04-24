@@ -3,6 +3,7 @@ import Row from "./components/Row";
 import "./App.css";
 import Pagination from "@mui/material/Pagination";
 import Footer from "./components/Footer";
+import Navbar from "./components/Navbar";
 
 function App() {
   const [posts, setPosts] = useState([]);
@@ -15,7 +16,7 @@ function App() {
   }, []);
 
   const handlePageChange = (e, p) => {
-    console.log("clicked on page " + e, p);
+    //console.log("clicked on page " + e, p);
     setPage(p);
     fetchData(searchTerm, p);
   };
@@ -34,11 +35,11 @@ function App() {
 
     if (searchT) {
       url = url + searchT;
-      console.log("inside fetch if(searchT) " + url);
+      //console.log("inside fetch if(searchT) " + url);
     }
     if (page) {
       url = url + "&page=" + page;
-      console.log("inside fetch if(page) " + url);
+      //console.log("inside fetch if(page) " + url);
     } else {
       setPage(1);
     }
@@ -53,6 +54,7 @@ function App() {
 
   return (
     <div className="App">
+      <Navbar />
       <input type="text" onChange={handleChange} />
       <ol>
         {posts?.map((post) => (

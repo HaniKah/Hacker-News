@@ -1,0 +1,19 @@
+.navi {
+  display: flex;
+  justify-content: space-between;
+  background-color: #ff6600;
+  font-size: 15px;
+  color: black;
+  height: 20px;
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+
+.logo{
+  display: flex;
+  align-items: center;
+}
+
+.login{
+  margin-right: 5px;
+}

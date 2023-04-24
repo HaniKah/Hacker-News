@@ -3,6 +3,7 @@ import Row from "./components/Row";
 import "./App.css";
 import Pagination from "@mui/material/Pagination";
 import Footer from "./components/Footer";
+import Navbar from "./components/Navbar";
 
 function App() {
   const [posts, setPosts] = useState([]);
@@ -53,6 +54,7 @@ function App() {
 
   return (
     <div className="App">
+      <Navbar />
       <input type="text" onChange={handleChange} />
       <ol>
         {posts?.map((post) => (
